@@ -1,0 +1,13 @@
+{
+  "Soft":      {"label": "ソフト",           "values": {"stiffness": 35, "damping": 30, "mass": 50, "follow": 0, "gravity_enabled": false, "start_state": "animated"}},
+  "Bouncy":    {"label": "弾む",             "values": {"stiffness": 60, "damping": 8,  "mass": 45, "follow": 0, "gravity_enabled": false, "start_state": "animated"}},
+  "Heavy":     {"label": "重い",             "values": {"stiffness": 70, "damping": 45, "mass": 80, "follow": 0, "gravity_enabled": true, "gravity": 100, "start_state": "settled"}},
+  "Hair":      {"label": "髪",               "values": {"stiffness": 10, "damping": 15, "mass": 40, "follow": 0, "gravity_enabled": true, "gravity": 100, "start_state": "settled"}},
+  "Drape":     {"label": "垂れる（髪・袖）", "values": {"stiffness": 0,  "damping": 20, "mass": 50, "follow": 0, "gravity_enabled": true, "gravity": 100, "start_state": "settled"}},
+  "Floaty":    {"label": "ふわっと（軽い髪）", "values": {"stiffness": 10, "damping": 10, "mass": 40, "follow": 0, "air_drag": 70, "gravity_enabled": true, "gravity": 50, "start_state": "settled"}},
+  "Tail":      {"label": "尻尾",             "values": {"stiffness": 40, "damping": 25, "mass": 60, "follow": 0, "gravity_enabled": true, "gravity": 40, "start_state": "settled"}},
+  "Accessory": {"label": "アクセサリー",     "values": {"stiffness": 70, "damping": 20, "mass": 55, "follow": 0, "gravity_enabled": true, "gravity": 100, "start_state": "settled"}},
+  "JumpRope":  {"label": "縄跳びの縄",       "values": {"stiffness": 0,  "damping": 20, "mass": 50, "follow": 0, "air_drag": 0, "gravity_enabled": true, "gravity": 100, "start_state": "settled", "rope_spin": false}},
+  "JumpRopeKeyed": {"label": "縄跳びの縄（キーに合わせる）", "values": {"stiffness": 75, "damping": 10, "mass": 50, "follow": 0, "air_drag": 0, "gravity_enabled": true, "gravity": 100, "start_state": "animated", "rope_spin": false}},
+  "JumpRopeSpin": {"label": "縄跳びの縄（手に合わせて回す）", "values": {"stiffness": 85, "damping": 20, "mass": 50, "follow": 0, "air_drag": 0, "gravity_enabled": true, "gravity": 100, "start_state": "settled", "rope_spin": true}}
+}

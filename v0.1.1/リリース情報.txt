@@ -1,0 +1,55 @@
+SIMFLOW v0.1.1
+作成日時: 2026-11-12 19:09
+
+インストール: install_simflow.py を Maya 2025 のビューポートにドラッグ＆ドロップ。
+前のバージョンから切り替えるときは、ドロップして「再インストール」を選びます。
+テスト用シーン: ../test_scenes/
+
+ファイル（47 個）
+  README.md
+  install_simflow.py
+  simflow/__init__.py
+  simflow/main.py
+  simflow/core/__init__.py
+  simflow/core/bake_manager.py
+  simflow/core/camera_view.py
+  simflow/core/collider_manager.py
+  simflow/core/collision_check.py
+  simflow/core/collision_view.py
+  simflow/core/controller_manager.py
+  simflow/core/curve.py
+  simflow/core/preset_manager.py
+  simflow/core/preview_manager.py
+  simflow/core/proxy_manager.py
+  simflow/core/rig_preview.py
+  simflow/core/rope_length.py
+  simflow/core/rope_order.py
+  simflow/core/scene_manager.py
+  simflow/core/session.py
+  simflow/core/settings.py
+  simflow/core/simulation_manager.py
+  simflow/core/transform_utils.py
+  simflow/core/warp.py
+  simflow/icons/simflow.png
+  simflow/icons/simflow_64.png
+  simflow/presets/default_presets.json
+  simflow/solvers/__init__.py
+  simflow/solvers/base_solver.py
+  simflow/solvers/chain_solver.py
+  simflow/solvers/collision.py
+  simflow/solvers/nhair_solver.py
+  simflow/solvers/pendulum_solver.py
+  simflow/solvers/rope_solver.py
+  simflow/solvers/rope_spin.py
+  simflow/solvers/sideways.py
+  simflow/solvers/spring_solver.py
+  simflow/ui/__init__.py
+  simflow/ui/controller_list.py
+  simflow/ui/curve_edit.py
+  simflow/ui/help_text.py
+  simflow/ui/main_window.py
+  simflow/ui/widgets.py
+  simflow/utils/__init__.py
+  simflow/utils/logger.py
+  simflow/utils/math_utils.py
+  simflow/utils/maya_utils.py
