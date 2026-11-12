@@ -1,0 +1,19 @@
+SIMFLOW テスト用シーン（Maya 2025、cm、24fps、1〜96 フレーム）
+
+simflow_test_scene.ma                 リグをシーンの中に直接持っている版
+reference/simflow_test_scene_ref.ma   リグ reference/simflow_test_rig.ma を名前空間 chr で Reference した版
+                                      （Reference のパスは D:/OG_Tools/SIM/release/test_scenes/reference/ の絶対パス。
+                                        フォルダを移したときは Reference エディタで読み直してください）
+make_test_scene.py                    シーンを作ったスクリプト（シーンの中身の説明は先頭のコメント）
+
+中身
+  A 単体         antenna_ctl
+  B 髪           hair01〜03_ctl（チェーン）
+  C 耳飾り       earL_ctl / earR_ctl（個別）
+  D 尻尾         tail01〜05_ctl（ジョイント、チェーン）
+  E 袖           sleeveA1〜C3_ctl（3 本 × 3 段、横のつながり）
+  F カメラ合わせ pony01〜03_ctl とカメラ shotCam_F（ワープ吸収）
+  G 当たり       カーテン G_curtainA1〜C3_ctl と髪 G_hair1〜4_ctl（揺れもの同士の当たり）
+  H 縄跳び       H_gripL_ctl、H_rope1〜8_ctl、H_gripR_ctl（縄・ひも）と床 H_floor
+
+作り直すとき（D:/OG_Tools/SIM で）： python make_release.py --scenes
