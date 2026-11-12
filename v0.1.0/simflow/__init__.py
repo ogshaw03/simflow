@@ -6,7 +6,7 @@ Usage inside Maya::
     import simflow
     simflow.show()
 """
-__version__ = "0.3.0"
+__version__ = "0.1.0"
 TOOL_NAME = "SIMFLOW"
 
 

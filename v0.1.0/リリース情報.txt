@@ -1,4 +1,4 @@
-SIMFLOW v0.3.0
+SIMFLOW v0.1.0
 作成日時: 2026-11-12 01:04
 
 インストール: install_simflow.py を Maya 2025 のビューポートにドラッグ＆ドロップ。
