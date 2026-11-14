@@ -1,13 +1,14 @@
 SIMFLOW v0.1.2
-作成日時: 2026-11-14 22:50
+作成日時: 2026-11-14 23:01
 
 インストール: install_simflow.py を Maya 2025 のビューポートにドラッグ＆ドロップし、バージョンを選んで「インストール」。
 インストールのあとは、SIMFLOW の右上の ⋮ →「アップデート・バージョンの切り替え...」で、ほかのバージョンに切り替えられます。
 テスト用シーン: ../test_scenes/
 
-ファイル（49 個）
+ファイル（50 個）
   README.md
   install_simflow.py
+  変更点.txt
   simflow/__init__.py
   simflow/main.py
   simflow/core/__init__.py

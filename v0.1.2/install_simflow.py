@@ -92,6 +92,25 @@ def release_notes():
     return {r.get("tag_name", "").lstrip("v"): (r.get("body") or "").strip() for r in rels if r.get("tag_name")}
 
 
+NOTES_FILE = "変更点.txt"           # in each release folder (make_release.py writes it from CHANGELOG.md)
+
+
+def folder_notes(version):
+    """The 変更点.txt of the release folder v<version>/ on GitHub ("" when none)."""
+    try:
+        return _get(RAW + urllib.parse.quote("v%s/%s" % (version, NOTES_FILE))).decode("utf-8").strip()
+    except Exception:
+        return ""
+
+
+def local_notes(root):
+    try:
+        with open(os.path.join(root, NOTES_FILE), encoding="utf-8") as f:
+            return f.read().strip()
+    except OSError:
+        return ""
+
+
 def versions_dir():
     import maya.cmds as cmds
     return os.path.join(cmds.internalVar(userAppDir=True), "simflow", "versions").replace("\\", "/")
@@ -328,18 +347,31 @@ def make_dialog(parent=None, remote=None, notes=None):
     for i, v in enumerate(remote):
         tags = (["最新"] if i == 0 else []) + (["インストール済み"] if v == cur_ver and current
                                                and not is_dev(current) else [])
-        add("v%s%s" % (v, ("（%s）" % "・".join(tags)) if tags else ""), "remote", v,
-            notes.get(v) or "GitHub の v%s/ をダウンロードしてインストールします。" % v)
+        # the release page's text, else the folder's 変更点.txt (read when chosen)
+        add("v%s%s" % (v, ("（%s）" % "・".join(tags)) if tags else ""), "remote", v, notes.get(v) or None)
     local = version_of(HERE)
     if local:
         tags = ["このファイルのフォルダ"] + (["開発用"] if is_dev(HERE) else []) + (["インストール済み"] if same(current, HERE) else [])
-        add("v%s（%s）" % (local, "・".join(tags)), "local", HERE,
-            "ダウンロードせずに、このフォルダをそのまま使います:\n%s" % HERE)
+        text = "ダウンロードせずに、このフォルダをそのまま使います:\n%s" % HERE
+        if local_notes(HERE):
+            text = local_notes(HERE) + "\n\n" + text
+        add("v%s（%s）" % (local, "・".join(tags)), "local", HERE, text)
     if not remote:
         msg = "GitHub のバージョンの一覧を読めませんでした。" + ("\n" + error if error else "")
         it = add("（GitHub に接続できません）", "none", None, msg)
         it.setFlags(QtCore.Qt.NoItemFlags)
-    lst.currentItemChanged.connect(lambda it, _p: info.setPlainText(it.data(QtCore.Qt.UserRole)[2] if it else ""))
+
+    def show_notes(it, _prev=None):
+        if it is None:
+            info.setPlainText("")
+            return
+        kind, value, note = it.data(QtCore.Qt.UserRole)
+        if note is None:
+            note = folder_notes(value) or "（変更点の説明はありません）"
+            note += "\n\nGitHub の v%s/ をダウンロードしてインストールします。" % value
+            it.setData(QtCore.Qt.UserRole, (kind, value, note))
+        info.setPlainText(note)
+    lst.currentItemChanged.connect(show_notes)
     for i in range(lst.count()):
         if lst.item(i).flags() & QtCore.Qt.ItemIsEnabled:
             lst.setCurrentRow(i)
