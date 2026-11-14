@@ -67,7 +67,7 @@ def load_installer():
 
 
 def open_versions_dialog():
-    """「アップデート・バージョンの切り替え」: the installer's dialog."""
+    """「バージョン」: the installer's dialog."""
     try:
         return load_installer().show_dialog()
     except Exception as exc:
@@ -195,7 +195,7 @@ class SimflowWindow(MayaQWidgetDockableMixin, QtWidgets.QWidget):
         menu.addAction("内部ステップレート（選択中の揺れもの）...", self._edit_step_rate)
         menu.addAction("シーンから再読み込み", self.reload_from_scene)
         menu.addSeparator()
-        menu.addAction("アップデート・バージョンの切り替え...", self._versions)
+        menu.addAction("バージョン...", self._versions)
         menu.addAction("SIMFLOW について", self._about)
         menu_btn.setMenu(menu)
         lay.addWidget(title)
