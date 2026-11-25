@@ -1,0 +1,19 @@
+{
+  "Soft":      {"label": "ソフト",           "values": {"stiffness": 35, "damping": 30, "mass": 50, "follow": 0, "gravity_enabled": false, "start_state": "animated"}},
+  "Bouncy":    {"label": "弾む",             "values": {"stiffness": 60, "damping": 8,  "mass": 45, "follow": 0, "gravity_enabled": false, "start_state": "animated"}},
+  "Heavy":     {"label": "重い",             "values": {"stiffness": 70, "damping": 45, "mass": 80, "follow": 0, "gravity_enabled": true, "gravity": 100, "start_state": "settled"}},
+  "Hair":      {"label": "髪",               "values": {"stiffness": 10, "damping": 15, "mass": 40, "follow": 0, "gravity_enabled": true, "gravity": 100, "start_state": "settled"}},
+  "Drape":     {"label": "垂れる（髪・袖）", "values": {"stiffness": 0,  "damping": 20, "mass": 50, "follow": 0, "gravity_enabled": true, "gravity": 100, "start_state": "settled"}},
+  "Floaty":    {"label": "ふわっと（軽い髪）", "values": {"stiffness": 10, "damping": 10, "mass": 40, "follow": 0, "air_drag": 70, "gravity_enabled": true, "gravity": 50, "start_state": "settled"}},
+  "Tail":      {"label": "尻尾",             "values": {"stiffness": 60, "damping": 50, "mass": 60, "follow": 0, "gravity_enabled": false, "gravity": 100, "start_state": "animated"}},
+  "Ears":      {"label": "立ち耳",           "values": {"stiffness": 78, "damping": 45, "mass": 60, "follow": 0, "gravity_enabled": true, "gravity": 15, "start_state": "animated"}},
+  "Accessory": {"label": "アクセサリー",     "values": {"stiffness": 70, "damping": 20, "mass": 55, "follow": 0, "gravity_enabled": true, "gravity": 100, "start_state": "settled"}},
+  "Skirt":     {"label": "スカート（激しい動き）", "values": {"stiffness": 20, "damping": 25, "mass": 40, "follow": 0, "gravity_enabled": true, "gravity": 100, "start_state": "animated", "chain_link": 100}},
+  "SkirtCalm": {"label": "スカート（ゆったりした動き）", "values": {"stiffness": 0, "damping": 10, "mass": 40, "follow": 0, "gravity_enabled": true, "gravity": 100, "start_state": "animated", "chain_link": 40}},
+  "JumpRope":  {"label": "縄跳びの縄",       "values": {"stiffness": 0,  "damping": 20, "mass": 50, "follow": 0, "air_drag": 0, "gravity_enabled": true, "gravity": 100, "start_state": "settled", "rope_spin": false}},
+  "JumpRopeKeyed": {"label": "縄跳びの縄（キーに合わせる）", "values": {"stiffness": 75, "damping": 10, "mass": 50, "follow": 0, "air_drag": 0, "gravity_enabled": true, "gravity": 100, "start_state": "animated", "rope_spin": false}},
+  "JumpRopeSpin": {"label": "縄跳びの縄（手に合わせて回す）", "values": {"stiffness": 85, "damping": 20, "mass": 50, "follow": 0, "air_drag": 0, "gravity_enabled": true, "gravity": 100, "start_state": "settled", "rope_spin": true}},
+  "OverlapHair":  {"label": "オーバーラップ：髪",   "values": {"overlap": true, "overlap_delay": 15, "overlap_bounce": 0, "overlap_tip": 100, "overlap_bend": 130}},
+  "OverlapTail":  {"label": "オーバーラップ：しっぽ", "values": {"overlap": true, "overlap_delay": 5, "overlap_bounce": 40, "overlap_tip": 50, "overlap_bend": 90}},
+  "OverlapCloth": {"label": "オーバーラップ：布",   "values": {"overlap": true, "overlap_delay": 6, "overlap_bounce": 15, "overlap_tip": 60, "overlap_bend": 60}}
+}
